@@ -351,9 +351,10 @@ GEM
     rubocop-rspec (3.5.0)
       lint_roller (~> 1.1)
       rubocop (~> 1.72, >= 1.72.1)
-    rubocop-rspec_rails (2.30.0)
-      rubocop (~> 1.61)
-      rubocop-rspec (~> 3, >= 3.0.1)
+    rubocop-rspec_rails (2.31.0)
+      lint_roller (~> 1.1)
+      rubocop (~> 1.72, >= 1.72.1)
+      rubocop-rspec (~> 3.5)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
     smart_properties (1.17.0)
@@ -446,7 +447,7 @@ DEPENDENCIES
   rubocop-factory_bot (~> 2.27)
   rubocop-rails
   rubocop-rspec (~> 3.5)
-  rubocop-rspec_rails (~> 2.30)
+  rubocop-rspec_rails (~> 2.31)
   solid_cable
   solid_cache
   solid_queue
