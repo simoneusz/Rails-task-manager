@@ -48,7 +48,7 @@ group :development, :test do
   gem 'faker', '~> 2.5'
   gem 'graphiti_spec_helpers'
   gem 'rubocop', require: false
-  gem 'rubocop-capybara', '~> 2.21'
+  gem 'rubocop-capybara', '~> 2.22'
   gem 'rubocop-erb', '~> 0.5.5'
   gem 'rubocop-factory_bot', '~> 2.27'
   gem 'rubocop-rails', require: false
