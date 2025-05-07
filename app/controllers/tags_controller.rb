@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TagsController < ApplicationController
   def index
     tags = TagResource.all(params)
@@ -11,8 +13,9 @@ class TagsController < ApplicationController
 
   def create
     tag = TagResource.build(params)
+
     if tag.save
-      render jsonapi: tag, status: 201
+      render jsonapi: tag, status: :created
     else
       render jsonapi_errors: tag
     end
@@ -20,6 +23,7 @@ class TagsController < ApplicationController
 
   def update
     tag = TagResource.find(params)
+
     if tag.update_attributes
       render jsonapi: tag
     else
@@ -29,8 +33,9 @@ class TagsController < ApplicationController
 
   def destroy
     tag = TagResource.find(params)
+
     if tag.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: tag
     end

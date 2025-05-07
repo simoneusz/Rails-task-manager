@@ -44,11 +44,9 @@ group :development, :test do
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem 'brakeman', require: false
 
-  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem 'factory_bot_rails', '~> 5.0'
   gem 'faker', '~> 2.5'
   gem 'graphiti_spec_helpers'
-  gem 'rspec-rails', '~> 4.0.0beta2'
   gem 'rubocop', require: false
   gem 'rubocop-capybara', '~> 2.21'
   gem 'rubocop-erb', '~> 0.5.5'
@@ -60,10 +58,12 @@ end
 
 gem 'graphiti'
 gem 'graphiti-rails'
+gem 'jsonapi-serializer'
 gem 'kaminari', '~> 1.1'
 gem 'responders', '~> 3.0'
 gem 'vandal_ui'
 
 group :test do
   gem 'database_cleaner', '~> 1.7'
+  gem 'rspec-rails'
 end

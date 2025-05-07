@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def index
     users = UserResource.all(params)
@@ -11,8 +13,9 @@ class UsersController < ApplicationController
 
   def create
     user = UserResource.build(params)
+
     if user.save
-      render jsonapi: user, status: 201
+      render jsonapi: user, status: :created
     else
       render jsonapi_errors: user
     end
@@ -20,6 +23,7 @@ class UsersController < ApplicationController
 
   def update
     user = UserResource.find(params)
+
     if user.update_attributes
       render jsonapi: user
     else
@@ -29,8 +33,9 @@ class UsersController < ApplicationController
 
   def destroy
     user = UserResource.find(params)
+
     if user.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: user
     end

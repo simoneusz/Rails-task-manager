@@ -163,6 +163,8 @@ GEM
     jsonapi-renderer (0.2.2)
     jsonapi-serializable (0.3.1)
       jsonapi-renderer (~> 0.2.0)
+    jsonapi-serializer (2.2.0)
+      activesupport (>= 4.2)
     kamal (2.5.3)
       activesupport (>= 7.0)
       base64 (~> 0.2)
@@ -431,12 +433,13 @@ DEPENDENCIES
   graphiti
   graphiti-rails
   graphiti_spec_helpers
+  jsonapi-serializer
   kamal
   kaminari (~> 1.1)
   puma (>= 5.0)
   rails (~> 8.0.2)
   responders (~> 3.0)
-  rspec-rails (~> 4.0.0beta2)
+  rspec-rails
   rubocop
   rubocop-capybara (~> 2.21)
   rubocop-erb (~> 0.5.5)

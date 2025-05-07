@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   def index
     comments = CommentResource.all(params)
@@ -11,8 +13,9 @@ class CommentsController < ApplicationController
 
   def create
     comment = CommentResource.build(params)
+
     if comment.save
-      render jsonapi: comment, status: 201
+      render jsonapi: comment, status: :created
     else
       render jsonapi_errors: comment
     end
@@ -20,6 +23,7 @@ class CommentsController < ApplicationController
 
   def update
     comment = CommentResource.find(params)
+
     if comment.update_attributes
       render jsonapi: comment
     else
@@ -29,8 +33,9 @@ class CommentsController < ApplicationController
 
   def destroy
     comment = CommentResource.find(params)
+
     if comment.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: comment
     end

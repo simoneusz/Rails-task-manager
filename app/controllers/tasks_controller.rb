@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TasksController < ApplicationController
   def index
     tasks = TaskResource.all(params)
@@ -11,8 +13,9 @@ class TasksController < ApplicationController
 
   def create
     task = TaskResource.build(params)
+
     if task.save
-      render jsonapi: task, status: 201
+      render jsonapi: task, status: :created
     else
       render jsonapi_errors: task
     end
@@ -20,6 +23,7 @@ class TasksController < ApplicationController
 
   def update
     task = TaskResource.find(params)
+
     if task.update_attributes
       render jsonapi: task
     else
@@ -29,18 +33,9 @@ class TasksController < ApplicationController
 
   def destroy
     task = TaskResource.find(params)
-    if task.destroy
-      render jsonapi: { meta: {} }, status: 200
-    else
-      render jsonapi_errors: task
-    end
-  end
 
-  # Custom action to mark a task as complete
-  def complete
-    task = Task.find(params[:id])
-    if task.complete!
-      render jsonapi: TaskResource.new(task)
+    if task.destroy
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: task
     end
