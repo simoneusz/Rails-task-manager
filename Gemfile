@@ -64,6 +64,6 @@ gem 'responders', '~> 3.0'
 gem 'vandal_ui'
 
 group :test do
-  gem 'database_cleaner', '~> 1.7'
+  gem 'database_cleaner', '~> 2.1'
   gem 'rspec-rails'
 end
