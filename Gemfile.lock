@@ -334,8 +334,9 @@ GEM
     rubocop-ast (1.44.1)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
-    rubocop-capybara (2.21.0)
-      rubocop (~> 1.41)
+    rubocop-capybara (2.22.1)
+      lint_roller (~> 1.1)
+      rubocop (~> 1.72, >= 1.72.1)
     rubocop-erb (0.5.5)
       better_html
       rubocop (~> 1.45)
@@ -441,7 +442,7 @@ DEPENDENCIES
   responders (~> 3.0)
   rspec-rails
   rubocop
-  rubocop-capybara (~> 2.21)
+  rubocop-capybara (~> 2.22)
   rubocop-erb (~> 0.5.5)
   rubocop-factory_bot (~> 2.27)
   rubocop-rails
