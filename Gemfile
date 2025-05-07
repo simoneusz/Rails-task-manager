@@ -45,7 +45,7 @@ group :development, :test do
   gem 'brakeman', require: false
 
   gem 'factory_bot_rails', '~> 5.0'
-  gem 'faker', '~> 2.5'
+  gem 'faker', '~> 3.5'
   gem 'graphiti_spec_helpers'
   gem 'rubocop', require: false
   gem 'rubocop-capybara', '~> 2.21'
