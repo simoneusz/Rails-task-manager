@@ -49,7 +49,7 @@ group :development, :test do
   gem 'graphiti_spec_helpers'
   gem 'rubocop', require: false
   gem 'rubocop-capybara', '~> 2.21'
-  gem 'rubocop-erb', '~> 0.5.5'
+  gem 'rubocop-erb', '~> 0.6.0'
   gem 'rubocop-factory_bot', '~> 2.27'
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', '~> 3.5'
